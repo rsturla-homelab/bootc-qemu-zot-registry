@@ -6,6 +6,7 @@
   },
   "storage": {
     "rootDirectory": "/var/lib/zot/data",
+    "dedupe": true,
     "retention": {
       "dryRun": false,
       "delay": "24h",
