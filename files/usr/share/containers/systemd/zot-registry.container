@@ -13,6 +13,5 @@ GlobalArgs=--storage-opt=additionalimagestore=/usr/lib/bootc/storage
 
 [Service]
 TimeoutStartSec=900
-
 [Install]
 WantedBy=default.target
