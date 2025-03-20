@@ -14,13 +14,10 @@
           "repositories": [
             "**"
           ],
-          "deleteUntagged": true,
           "keepTags": [
             {
               "mostRecentlyPushedCount": 10,
-              "mostRecentlyPulledCount": 10,
-              "pulledWithin": "168h",
-              "pushedWithin": "168h"
+              "mostRecentlyPulledCount": 10
             }
           ]
         }
