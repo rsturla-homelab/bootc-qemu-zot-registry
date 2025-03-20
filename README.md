@@ -1,0 +1,1 @@
+# bootc-qemu-zot-registry
