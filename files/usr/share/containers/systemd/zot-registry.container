@@ -4,17 +4,15 @@ After=network-online.target
 
 [Container]
 Image=ghcr.io/project-zot/zot:v2.1.2
-AutoUpdate=registry
 ContainerName=zot-registry
 Exec=serve /etc/zot/config.yaml
 Volume=zot-registry.volume:/var/lib/zot/data
 Volume=/etc/zot/config.yaml:/etc/zot/config.yaml:ro,Z
 PublishPort=5000:5000
-UserNS=auto
 GlobalArgs=--storage-opt=additionalimagestore=/usr/lib/bootc/storage
 
 [Service]
 TimeoutStartSec=900
 
 [Install]
-WantedBy=default.target multi-user.target
+WantedBy=default.target
