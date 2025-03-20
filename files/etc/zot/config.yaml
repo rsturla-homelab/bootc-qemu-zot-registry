@@ -33,6 +33,7 @@ extensions:
         onDemand: true
         tlsVerify: true
         maxRetries: 3
+        retryDelay: 15s
         content:
           - prefix: "**"
             destination: "/proxy"
