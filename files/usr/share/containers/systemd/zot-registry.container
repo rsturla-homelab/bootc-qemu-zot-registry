@@ -3,7 +3,7 @@ Description=A Zot registry container
 After=network-online.target
 
 [Container]
-Image=ghcr.io/project-zot/zot:v2.1.2
+Image=ghcr.io/project-zot/zot:v2.1.3-rc3
 ContainerName=zot-registry
 Exec=serve /etc/zot/config.json
 Volume=zot-registry.volume:/var/lib/zot/data
