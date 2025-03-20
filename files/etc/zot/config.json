@@ -1,0 +1,67 @@
+{
+  "distSpecVersion": "1.0.1",
+  "http": {
+    "address": "0.0.0.0",
+    "port": 5000,
+    "accessControl": {
+      "repositories": {
+        "/proxy/**": {
+          "anonymousPolicy": [
+            "read"
+          ]
+        }
+      }
+    }
+  },
+  "storage": {
+    "rootDirectory": "/var/lib/zot/data",
+    "retention": {
+      "dryRun": false,
+      "delay": "24h",
+      "policies": [
+        {
+          "repositories": [
+            "**"
+          ],
+          "deleteUntagged": true,
+          "keepTags": [
+            {
+              "mostRecentlyPushedCount": 10,
+              "mostRecentlyPulledCount": 10,
+              "pulledWithin": "168h",
+              "pushedWithin": "168h"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "extensions": {
+    "sync": {
+      "registries": [
+        {
+          "urls": [
+            "https://ghcr.io",
+            "https://docker.io",
+            "https://quay.io",
+            "https://k8s.gcr.io",
+            "https://gcr.io",
+            "https://mcr.microsoft.com",
+            "https://registry-1.docker.io",
+            "https://public.ecr.aws"
+          ],
+          "onDemand": true,
+          "tlsVerify": true,
+          "maxRetries": 3,
+          "retryDelay": "15s",
+          "content": [
+            {
+              "prefix": "**",
+              "destination": "/proxy-all"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

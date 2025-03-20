@@ -5,9 +5,9 @@ After=network-online.target
 [Container]
 Image=ghcr.io/project-zot/zot:v2.1.2
 ContainerName=zot-registry
-Exec=serve /etc/zot/config.yaml
+Exec=serve /etc/zot/config.json
 Volume=zot-registry.volume:/var/lib/zot/data
-Volume=/etc/zot/config.yaml:/etc/zot/config.yaml:ro,Z
+Volume=/etc/zot/config.json:/etc/zot/config.json:ro,Z
 PublishPort=5000:5000
 GlobalArgs=--storage-opt=additionalimagestore=/usr/lib/bootc/storage
 
