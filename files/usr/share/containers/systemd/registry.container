@@ -1,0 +1,17 @@
+[Unit]
+Description=A registry container
+After=network-online.target
+
+[Container]
+Image=docker.io/library/registry:3.0.0-rc.3
+ContainerName=registry
+Volume=registry.volume:/var/lib/registry
+Volume=/etc/registry/config.yml:/etc/distribution/config.yml:ro,Z
+PublishPort=5000:5000
+GlobalArgs=--storage-opt=additionalimagestore=/usr/lib/bootc/storage
+
+[Service]
+TimeoutStartSec=900
+
+[Install]
+WantedBy=default.target

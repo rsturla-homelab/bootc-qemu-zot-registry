@@ -1,0 +1,7 @@
+storage:
+  filesystem:
+    rootdirectory: /var/lib/registry
+
+proxy:
+  remoteurl: https://ghcr.io
+  ttl: 0
